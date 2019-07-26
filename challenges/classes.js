@@ -30,11 +30,11 @@ class CubeMaker extends CuboidMaker1 {
     constructor(cubeAtt) {
         super(cubeAtt)
     }
-    volume() {
+    volumeCube() {
         return this.length * this.width * this.height;
     }
 
-    surfaceArea() {
+    surfaceAreaCube() {
         return 2 * (this.length * this.width + this.length * this.height+ this.width * this.height);
 
     }
@@ -48,3 +48,24 @@ const cube = new CubeMaker({
 
 console.log(cube.volume());
 console.log(cube.surfaceArea());
+
+class ConeMaker extends CuboidMaker1 {
+    constructor(coneAtt) {
+        super(coneAtt);
+        this.radius = coneAtt.radius
+    }
+    volume() {
+        return Math.PI * (Math.pow(this.radius, 2) * (this.height / 3));
+    };
+    surfaceArea() {
+        return Math.PI * this.radius * (this.radius + Math.sqrt(Math.pow(this.height, 2) + Math.pow(this.radius, 2)))
+    }
+};
+
+const cone = new ConeMaker ({
+    height: 2,
+    radius: 3
+});
+
+console.log(cone.volume());
+console.log(cone.surfaceArea());
