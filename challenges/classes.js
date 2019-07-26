@@ -31,11 +31,11 @@ class CubeMaker extends CuboidMaker1 {
         super(cubeAtt)
     }
     volumeCube() {
-        return this.length * this.width * this.height;
+        return Math.pow(this.length, 3);
     }
 
     surfaceAreaCube() {
-        return 2 * (this.length * this.width + this.length * this.height+ this.width * this.height);
+        return 6 * Math.pow(this.length, 2);
 
     }
 };
